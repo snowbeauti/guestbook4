@@ -38,8 +38,7 @@
 		<table border="1" width="800px">
 
 			<tr>
-				<td width="150px">${gvo.no}<input type="hidden" name="no"
-					value="${gvo.no}"></td>
+				<td width="150px">${gvo.no}</td>
 				<td width="200px">${gvo.name}</td>
 				<td width="300px">${gvo.regDate}</td>
 				<td width="150px"><a

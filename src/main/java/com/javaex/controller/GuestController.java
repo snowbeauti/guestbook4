@@ -21,17 +21,17 @@ public class GuestController {
 	public String addlist(Model model) {
 		System.out.println("addlist");
 		GuestDao gdao = new GuestDao();
-		List<GuestVo> GList = gdao.GList();
+		List<GuestVo> gList = gdao.GList();
 
-		model.addAttribute("gList", GList);
-		System.out.println(GList.toString());
+		model.addAttribute("gList", gList);
+		System.out.println(gList.toString());
 
 		return "AddList";
 	}
 	
 	//등록
 	@RequestMapping(value = "add",  method = { RequestMethod.GET, RequestMethod.POST } )
-	public String add(@ModelAttribute GuestVo gvo, Model model) {
+	public String add(@ModelAttribute GuestVo gvo) {
 		System.out.println("add");
 		
 		GuestDao gdao = new GuestDao();
@@ -44,7 +44,7 @@ public class GuestController {
 
 	// 삭제폼
 	@RequestMapping(value = "dform",  method = { RequestMethod.GET, RequestMethod.POST })
-	public String deleteform(@RequestParam("no") int no) {
+	public String deleteform() {
 		System.out.println("deleteForm");
 
 		return "DeleteForm";
@@ -52,8 +52,8 @@ public class GuestController {
 
 	// 삭제
 	@RequestMapping(value = "delete", method = { RequestMethod.GET, RequestMethod.POST })
-	public String delete(@RequestParam int no, 	
-						 @RequestParam String password) {
+	public String delete(@RequestParam/*("id")*/ int no, 	
+						 @RequestParam/*("password")*/ String password) {
 		System.out.println("delete");
 
 		GuestDao gdao = new GuestDao();
